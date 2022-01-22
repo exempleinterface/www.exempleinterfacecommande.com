@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>interface commende</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div class="ui main container" id="app">
+    <div id="connection section" class="jumbotron">
+       <p>Your name: <input type="text" v-model="user"></p>
+       <p>Your email: <input type="email" class="Form-controls" id="floatingInput" placeholder="Email"> </p>
+       <p>Your password: <input type="password" class="Form-controls" id="floatingPassword" placeholder="Password"></p>
+       </div>
+        <p> product order: {{ prod}} </p>
+        <button> order</button>
+       <h1 class="display-4">Customers say:</h1>
+       <div class="row">
+         <div class="col-3" v-for="person in persons">
+           <p class="jumbotron">
+             {{person}}
+             <div id="comment">
+            <p> excellent work, fast delivery, and delivered without a single crumb! Thank you!</p>
+             </div>
+           </p>
+        
+         </div>
+
+       </div>
+       <h1 class="display-4">Available products:</h1> 
+       <div class="row">
+         <div class="col-3" v-for="produit in produits">
+           <p class="jumbotron">
+            {{ produit}}
+            <button @click="click()"> order</button>
+           </p>
+         </div>
+       </div>
+ 
+      <i class="close icon" v-on:click=""></i>
+      <p class="jumbotron"> {{ avis}} <textarea id="textarea" cols="30" rows="1" placeholder="write your review here"></textarea></p>
+        <div class="ui success message" v-if="success">
+          <p> thank you for your visit !</p>
+        </div>
+        
+        <div class="ui error message" v-else>
+          <p>Thank you for comment !</p>
+        </div>
+        <br>
+        <button @click="close" @click="cls()"> Send</button>
+      <br>
+      <p class="jumbotron"> Thank you {{ user}} </p>
+      </div>
+      
+     <script src="assets/vue/interface-commende.js"></script>
+</body>
+
+</html>
